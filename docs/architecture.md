@@ -405,11 +405,3 @@ Potential future improvements include:
 ## Project Goal
 
 The main goal of this platform is to provide a reliable and scalable way to detect accessibility issues early in the development process.
-
-This project also serves as a portfolio demonstration of:
-- backend architecture
-- accessibility engineering
-- browser automation
-- API-first design
-- containerized development
-- structured technical planning
