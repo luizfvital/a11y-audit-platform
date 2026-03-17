@@ -57,8 +57,16 @@ Supported actions:
 - create application
 - associate application to a project
 - configure accessibility target level
-- configure device type (desktop / mobile)
+- configure device type
 - configure viewport size
+- configure wait time before scanning
+
+MVP configuration includes:
+
+- device type (desktop / tablet / phone)
+- viewport width and height
+- wait time in milliseconds
+- accessibility target level
 
 ---
 
@@ -83,6 +91,14 @@ Supported actions:
 - create report
 - associate report to an application
 - select screens to include in the report
+- optionally configure authentication settings
+
+MVP report configuration may include:
+
+- authentication enabled flag
+- login URL
+- username
+- password
 
 ---
 
@@ -123,6 +139,9 @@ The system must:
 - collect axe-core violations
 - normalize findings
 - associate findings with the screen and report run
+- associate findings with a guideline reference
+
+The MVP contract should expose normalized findings instead of raw axe-core payloads.
 
 ---
 
@@ -132,6 +151,27 @@ The backend must expose endpoints to retrieve:
 
 - report run status
 - findings for a report run
+
+Findings should include normalized references such as:
+
+- screen
+- guideline
+- rule code
+- message
+- selector path
+
+---
+
+## Guidelines Reference
+
+The MVP backend must support a guideline reference model used by findings.
+
+Supported actions:
+
+- expose guideline data for classification/reference
+- associate findings to guidelines
+
+Guidelines may be seeded from a static dataset rather than manually managed.
 
 ---
 
@@ -176,6 +216,8 @@ Not included:
 - trend analysis
 - historical comparisons
 
+Historical report runs may exist in the MVP, but advanced reporting over that history is out of scope.
+
 ---
 
 ## Issue Management
@@ -185,6 +227,8 @@ Not included:
 - assigning issues
 - marking issues as resolved
 - issue lifecycle management
+
+Although the domain model may contain a finding status field, full issue-management workflows are out of scope.
 
 ---
 
@@ -254,10 +298,11 @@ The MVP backend is considered complete when the following workflow works end-to-
 3.	Register screens
 4.	Create report
 5.	Trigger report run
-6.	Playwright loads each screen
+6.	Playwright loads each selected screen
 7.	axe-core performs scan
-8.	Findings are collected
-9.	API returns normalized results
+8.	Findings are collected and normalized
+9.	Findings are linked to screens, report run, and guideline references
+10.	API returns normalized results
 
 Additionally:
 
