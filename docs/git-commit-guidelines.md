@@ -12,8 +12,6 @@ The goals are to:
 -   Facilitate **code reviews**
 -   Support future **automation (changelogs, releases, etc.)**
 
-------------------------------------------------------------------------
-
 # General Principles
 
 Good commits should be:
@@ -25,8 +23,6 @@ Good commits should be:
 
 A reader should be able to understand the purpose of the commit
 **without reading the code**.
-
-------------------------------------------------------------------------
 
 # Commit Message Structure
 
@@ -44,8 +40,6 @@ Example:
 
     Implements the accessibility audit runner using axe-core.
     Results are returned as structured JSON for further processing.
-
-------------------------------------------------------------------------
 
 # Commit Types
 

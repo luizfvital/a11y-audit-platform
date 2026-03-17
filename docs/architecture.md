@@ -13,8 +13,6 @@ The architecture separates:
 
 This allows the backend to be validated independently before the frontend, which will later be implemented in OutSystems.
 
----
-
 ## High-Level Architecture
 
 ```text
