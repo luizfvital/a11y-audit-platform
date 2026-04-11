@@ -9,7 +9,7 @@ Backend-first monorepo for an accessibility audit platform built around:
 
 ## Repository Structure
 
-The repository follows the architecture described in [`docs/architecture.md`](docs/architecture.md).
+The repository follows the MVP specification described in [`docs/mvp-spec.md`](docs/mvp-spec.md).
 
 ```text
 apps/
@@ -25,7 +25,7 @@ tests/
   api/         API-focused validation tests
   fixtures/    test data and reusable fixtures
 
-docs/          architecture, scope, and domain decisions
+docs/          project specifications and working agreements
 postman/       API exploration and manual test collections
 openapi.yaml   source API contract
 .env.example   local environment template
@@ -38,10 +38,7 @@ This repository currently focuses on contract-first backend design for the MVP.
 The main artifacts available today are:
 
 - [`openapi.yaml`](openapi.yaml): API contract with request/response examples
-- [`docs/mvp-scope.md`](docs/mvp-scope.md): MVP scope and boundaries
-- [`docs/architecture.md`](docs/architecture.md): system architecture and repository split
-- [`docs/domain-model.md`](docs/domain-model.md): domain entities and relationships
-- [`docs/report-run-lifecycle.md`](docs/report-run-lifecycle.md): report run state model
+- [`docs/mvp-spec.md`](docs/mvp-spec.md): canonical MVP scope, architecture, domain model, lifecycle, and execution flow
 
 ## Domain Overview
 
@@ -109,4 +106,3 @@ This repository is organized to keep responsibilities separated:
 - `tests` owns validation coverage
 
 That split is intentional so the project can scale without collapsing API, execution, and shared domain code into one package.
-
